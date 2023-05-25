@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckd0w4tk76c8t"]
+
+[ext_resource type="Script" path="res://comida/SpawnComida.gd" id="1_380ve"]
+[ext_resource type="PackedScene" uid="uid://bs50xqm3comf6" path="res://comida/comida.tscn" id="2_cihkw"]
+
+[node name="SpawnComida" type="Node"]
+script = ExtResource("1_380ve")
+Comida = ExtResource("2_cihkw")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Foods" type="Node" parent="."]

@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://bs50xqm3comf6"]
+
+[ext_resource type="Script" path="res://comida/comida.gd" id="1_5c2ml"]
+[ext_resource type="Texture2D" uid="uid://hv7rsi2n03q7" path="res://comida/comida_textura.png" id="2_vnhcf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t0h2y"]
+size = Vector2(1536, 1598.14)
+
+[node name="Comida" type="Node2D" groups=["coletável"]]
+script = ExtResource("1_5c2ml")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.42109e-14, -2.38419e-07)
+scale = Vector2(0.0117188, 0.0112631)
+texture = ExtResource("2_vnhcf")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-1.42109e-14, -2.38419e-07)
+scale = Vector2(0.0117188, 0.0112631)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1, 0.999999)
+shape = SubResource("RectangleShape2D_t0h2y")
+
+[node name="Destroy" type="Timer" parent="."]
+one_shot = true
+
+[node name="Update" type="Timer" parent="."]
+
+[node name="TimeLeft" type="Label" parent="."]
+offset_left = -9.0
+offset_top = -32.0
+offset_right = 10.0
+offset_bottom = -9.0
+horizontal_alignment = 1

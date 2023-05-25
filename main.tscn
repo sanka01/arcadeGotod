@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1fb850c3rc0j"]
+
+[ext_resource type="PackedScene" uid="uid://dssq185wtbfl0" path="res://character.tscn" id="1_jt1qs"]
+[ext_resource type="PackedScene" uid="uid://ckd0w4tk76c8t" path="res://comida/spawn_comida.tscn" id="2_75b76"]
+[ext_resource type="PackedScene" uid="uid://8u65pbvyahky" path="res://ui/ui.tscn" id="3_ahdkm"]
+
+[sub_resource type="Gradient" id="Gradient_2scsg"]
+colors = PackedColorArray(0.507831, 0.434298, 0.335908, 1, 0.0420677, 0.539024, 0.616677, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ms5me"]
+gradient = SubResource("Gradient_2scsg")
+fill_from = Vector2(0.53211, 0.816514)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576.5, 326)
+scale = Vector2(18.0156, 10.1719)
+texture = SubResource("GradientTexture2D_ms5me")
+
+[node name="Personagem" parent="." instance=ExtResource("1_jt1qs")]
+position = Vector2(587, 309)
+
+[node name="SpawnComida" parent="." instance=ExtResource("2_75b76")]
+
+[node name="ui" parent="." instance=ExtResource("3_ahdkm")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 64.0
+offset_top = 2.0
+offset_right = 1102.0
+offset_bottom = 606.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4

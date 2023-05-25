@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://8u65pbvyahky"]
+
+[ext_resource type="Script" path="res://ui/UpdateScore.gd" id="1_d3ovk"]
+[ext_resource type="Script" path="res://ui/Score.gd" id="1_wkyex"]
+
+[node name="ui" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 4.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ScoreContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.0
+offset_right = 96.0
+offset_bottom = 36.0
+grow_horizontal = 2
+
+[node name="Score" type="RichTextLabel" parent="ScoreContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+text = "Score"
+fit_content = true
+autowrap_mode = 0
+script = ExtResource("1_wkyex")
+
+[node name="UpdatesContainer" type="HBoxContainer" parent="ScoreContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+script = ExtResource("1_d3ovk")
+
+[node name="Update" type="Timer" parent="ScoreContainer/UpdatesContainer"]
+autostart = true
